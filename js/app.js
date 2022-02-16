@@ -1,33 +1,37 @@
 function readInput(id) {
   const intput = document.getElementById(id);
   const inputValue = parseFloat(intput.value);
-  if (inputValue === Number) {
+  if (typeof inputValue != "string") {
     intput.value = "";
     return inputValue;
-  } else {
-    intput.placeholder = "It's not a number";
   }
 }
 
-function calcPercent(income, savingPercent) {
-  return (income * savingPercent) / 100;
-}
+var income = 0;
+document.getElementById("input-one").addEventListener("blur", function () {
+  if (parseFloat(document.getElementById("input-one").value) != "string") {
+    income = parseFloat(document.getElementById("input-one").value);
+  }
+});
+
 /* catching input from expense and income feild */
 document.getElementById("calculate-btn").addEventListener("click", function () {
-  var income = readInput("input-one");
   const food = readInput("input-two");
   const rent = readInput("input-three");
   const clothes = readInput("input-four");
 
   const totalExpenses = food + rent + clothes;
-  const currentBalance = income - totalExpenses;
+  var currentBalance = income - totalExpenses;
 
   document.getElementById("total-exp").innerText = totalExpenses;
   document.getElementById("balance").innerText = currentBalance;
 });
 
 /* catching input from save feild */
-document.getElementById("save").addEventListener("click", function () {
+document.getElementById("save-btn").addEventListener("click", function () {
   const savingPercent = readInput("input-five");
-  const sacingAmount = calcPercent(savingPercent);
+  const savingAmount = (income * savingPercent) / 100;
+  console.log(savingAmount);
+  document.getElementById("saving-amount").innerText = savingAmount;
+  document.getElementById("").innerText = currentBalance - savingAmount;
 });
