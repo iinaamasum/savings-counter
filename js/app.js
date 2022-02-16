@@ -7,7 +7,9 @@ function readInput(id) {
   }
 }
 
-var income = 0;
+var income = 0,
+  savingPercent = 0,
+  currentBalance;
 document.getElementById("input-one").addEventListener("blur", function () {
   if (parseFloat(document.getElementById("input-one").value) != "string") {
     income = parseFloat(document.getElementById("input-one").value);
@@ -21,7 +23,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   const clothes = readInput("input-four");
 
   const totalExpenses = food + rent + clothes;
-  var currentBalance = income - totalExpenses;
+  currentBalance = income - totalExpenses;
 
   document.getElementById("total-exp").innerText = totalExpenses;
   document.getElementById("balance").innerText = currentBalance;
@@ -29,9 +31,9 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
 /* catching input from save feild */
 document.getElementById("save-btn").addEventListener("click", function () {
-  const savingPercent = readInput("input-five");
+  savingPercent = readInput("input-five");
   const savingAmount = (income * savingPercent) / 100;
-  console.log(savingAmount);
   document.getElementById("saving-amount").innerText = savingAmount;
-  document.getElementById("").innerText = currentBalance - savingAmount;
+  document.getElementById("remaining-amount").innerText =
+    currentBalance - savingAmount;
 });
