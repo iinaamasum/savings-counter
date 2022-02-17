@@ -57,11 +57,12 @@ document.getElementById("save-btn").addEventListener("click", function () {
   savingPercent = readInput("input-five");
   const savingAmount = (income * savingPercent) / 100;
   /* checking percentance */
-  if(isNaN(savingPercent)){
+  if (isNaN(savingPercent)) {
     vlidationInput("block", "none", "none");
     return;
-  }
-  else if (savingPercent > 100) {
+  } else if (savingPercent < 0) {
+    vlidationInput("none", "block", "none");
+  } else if (savingPercent > 100) {
     document.getElementById("saving-amount").innerText =
       "❌ Percentance should be less than 100";
     return;
