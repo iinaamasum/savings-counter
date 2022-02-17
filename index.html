@@ -15,8 +15,9 @@
 </head>
 
 <body>
-  <header class="container shadow rounded">
+  <header class="container shadow rounded bg-light">
     <h1 class="text-center my-4">Savings Counter 💰</h1>
+    <hr class="pb-1 rounded">
     <div class="row row-cols-1 row-cols-md-2">
       <!-- body left part -->
       <div class="col-12 col-lg-6 card-body bg-light">
@@ -24,11 +25,15 @@
           <img class="img-fluid rounded" src="./images/money.jpg" alt="" srcset="">
         </div>
         <!-- validation -->
-        <div class="validation text-center pt-4">
-          <h4 class="display-property">❌ Failed, You entered a string or entered null string the input box
+        <div class="validation text-center pt-2">
+          <p class="fs-4 text-primary">Validation</p>
+          <hr>
+          <h4 class="display-property bg-dark text-white rounded py-1">❌ Failed, You entered a string or entered null
+            string
+            into the input box
           </h4>
-          <h4 class="display-property">❌ Failed, You entered a negative number</h4>
-          <h4 class="display-property" ✅ Success, You give the right Info</h4>
+          <h4 class="display-property bg-dark text-white rounded py-1">❌ Failed, You entered a negative number</h4>
+          <h4 class="display-property bg-dark text-white rounded py-1"> ✅ Success, You give the right Info</h4>
         </div>
       </div>
       <!-- body right part -->
@@ -38,7 +43,7 @@
             <h4 class="text-center py-1">Income</h4>
             <div class="input-group mb-3">
               <span class="input-group-text">Income: </span>
-              <input type="text" class="form-control shadow-none" id="input-one" placeholder="Please, enter a number">
+              <input type="text" class="form-control shadow-none" id="input-one" placeholder="Your Income">
             </div>
           </div>
         </div>
@@ -48,29 +53,29 @@
             <h4 class="text-center py-1">Expenses</h4>
             <div class="input-group mb-3">
               <span class="input-group-text">Food: </span>
-              <input type="text" class="form-control shadow-none" id="input-two" placeholder="Please, enter a number">
+              <input type="text" class="form-control shadow-none" id="input-two" placeholder="Food cost">
             </div>
             <div class="input-group mb-3">
               <span class="input-group-text text-center">Rent: </span>
-              <input type="text" class="form-control shadow-none" id="input-three" placeholder="Please, enter a number">
+              <input type="text" class="form-control shadow-none" id="input-three" placeholder="Total rent">
             </div>
             <div class="input-group mb-3">
               <span class="input-group-text">Clothes: </span>
-              <input type="text" class="form-control shadow-none" id="input-four" placeholder="Please, enter a number">
+              <input type="text" class="form-control shadow-none" id="input-four" placeholder="Clothes cost">
             </div>
-
           </div>
+          <!-- calculate button -->
           <button type="button" id="calculate-btn"
             class="btn btn-outline-primary shadow-none col-8 mx-auto rounded-pill">Calculate</button>
           <div class="col-10 mx-auto text-center py-3">
-            <h5>Total Expenses: $<span id="total-exp">5500</span> </h5>
-            <h5>Balance: $<span id="balance">4500</span></h5>
+            <h5>Total Expenses: $<span id="total-exp">00</span> </h5>
+            <h5>Balance: $<span id="balance">00</span></h5>
           </div>
           <!-- Savings -->
           <div class="col-10 mx-auto">
             <div class="input-group mb-3">
               <span class="input-group-text">Save: </span>
-              <input type="text" class="form-control shadow-none" id="input-five" placeholder="Please, enter a number">
+              <input type="text" class="form-control shadow-none rounded-end" id="input-five" placeholder="Saving">
               <span class="mx-2 mt-1">%</span>
               <button id="save-btn" type="button" class="btn btn-outline-success 
               mx-auto px-5 rounded-pill shadow-none">Save</button>
@@ -78,8 +83,8 @@
             </div>
           </div>
           <div class="col-10 mx-auto text-center py-2">
-            <h4>Saving Amount: $<span id="saving-amount">4500</span></h4>
-            <h4>Remaining Balance: $<span id="remaining-amount">5500</span> </h4>
+            <h4>Saving Amount: $<span id="saving-amount">00</span></h4>
+            <h4>Remaining Balance: $<span id="remaining-amount">00</span> </h4>
           </div>
         </div>
       </div>
